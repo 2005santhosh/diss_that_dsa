@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISS THAT DSA - Step Inside the Logic</title>
+    <title>D;SS THAT {DSA} - Step Inside the Logic</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,8 +67,8 @@
         }
         
         .preloader-logo {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 20px;
             position: relative;
         }
@@ -80,13 +80,13 @@
         
         .preloader-text {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--accent-cyan);
             letter-spacing: 0.1em;
         }
         
         .preloader-progress {
-            width: 200px;
+            width: 150px;
             height: 4px;
             background-color: rgba(255, 255, 255, 0.1);
             margin: 20px auto 0;
@@ -133,16 +133,17 @@
             align-items: center;
             z-index: 2;
             pointer-events: none;
+            padding: 20px;
         }
         
         .hero-content {
             text-align: center;
             max-width: 800px;
-            padding: 0 20px;
+            width: 100%;
         }
         
         .hero-title {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2rem, 10vw, 4rem);
             font-weight: 900;
             margin-bottom: 20px;
             background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
@@ -151,14 +152,16 @@
             color: transparent;
             opacity: 0;
             transform: translateY(30px);
+            line-height: 1.1;
         }
         
         .hero-subtitle {
-            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-size: clamp(0.9rem, 4vw, 1.3rem);
             color: var(--text-secondary);
             margin-bottom: 40px;
             opacity: 0;
             transform: translateY(30px);
+            line-height: 1.4;
         }
         
         .hero-subtitle .typed-cursor {
@@ -173,7 +176,7 @@
         
         .hero-ctas {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
             opacity: 0;
@@ -181,11 +184,11 @@
         }
         
         .cta {
-            padding: 15px 30px;
+            padding: 12px 24px;
             border-radius: 50px;
             font-family: 'Orbitron', sans-serif;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 0.05em;
             text-decoration: none;
             display: inline-block;
@@ -195,6 +198,7 @@
             pointer-events: all;
             cursor: pointer;
             border: none;
+            min-width: 140px;
         }
         
         .cta-primary {
@@ -224,13 +228,43 @@
             transform: scale(0.97);
         }
         
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 101;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
         /* Navigation */
         .nav-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 40px;
+            padding: 15px 20px;
             z-index: 100;
             display: flex;
             justify-content: space-between;
@@ -244,7 +278,7 @@
         .nav-logo {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
             -webkit-background-clip: text;
             background-clip: text;
@@ -253,7 +287,7 @@
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
         
         .nav-link {
@@ -262,6 +296,7 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            font-size: 0.9rem;
         }
         
         .nav-link::after {
@@ -286,15 +321,15 @@
         /* Skip Cinematic Button */
         .skip-cinematic {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 10px 20px;
+            bottom: 20px;
+            right: 20px;
+            padding: 8px 16px;
             background-color: var(--glass-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
             border-radius: 30px;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             cursor: pointer;
             z-index: 10;
             opacity: 0;
@@ -309,7 +344,7 @@
         /* Mentor Hub */
         .mentor-hub {
             min-height: 100vh;
-            padding: 100px 20px;
+            padding: 80px 20px;
             position: relative;
             z-index: 5;
             display: flex;
@@ -319,31 +354,33 @@
         }
         
         .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 6vw, 2.5rem);
+            margin-bottom: 15px;
             text-align: center;
         }
         
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
             color: var(--text-secondary);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             text-align: center;
             max-width: 600px;
+            line-height: 1.5;
         }
         
         .mentor-container {
             position: relative;
             width: 100%;
-            max-width: 800px;
-            height: 500px;
+            max-width: 350px;
+            height: 450px;
             margin-bottom: 40px;
+            perspective: 1000px;
         }
         
         .mentor-card {
             position: absolute;
-            width: 300px;
-            height: 400px;
+            width: 100%;
+            height: 100%;
             background-color: var(--glass-bg);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -353,64 +390,72 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 30px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            padding: 30px 20px;
+            top: 0;
+            left: 0;
             opacity: 0;
+            transform: rotateY(90deg) translateZ(-100px);
             pointer-events: none;
-            transition: all 0.5s ease;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
         }
         
         .mentor-card.active {
             opacity: 1;
+            transform: rotateY(0deg) translateZ(0);
             pointer-events: all;
+            z-index: 10;
         }
         
         .mentor-image {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 12px;
             object-fit: cover;
             margin-bottom: 20px;
         }
         
         .mentor-name {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
+            text-align: center;
         }
         
         .mentor-title {
             color: var(--text-secondary);
             margin-bottom: 20px;
             text-align: center;
+            font-size: 0.9rem;
         }
         
         .mentor-tags {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
             justify-content: center;
         }
         
         .mentor-tag {
-            padding: 5px 15px;
+            padding: 4px 12px;
             background-color: rgba(0, 229, 255, 0.1);
             border: 1px solid var(--accent-cyan);
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent-cyan);
         }
         
         .mentor-controls {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .mentor-nav {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background-color: var(--glass-bg);
             backdrop-filter: blur(10px);
@@ -428,19 +473,19 @@
         }
         
         .mentor-nav svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: var(--text-primary);
         }
         
         .mentor-thumbnails {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         
         .mentor-thumbnail {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 10px;
             object-fit: cover;
             cursor: pointer;
@@ -461,7 +506,7 @@
         
         /* Courses Section */
         .courses-section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             position: relative;
             z-index: 5;
         }
@@ -473,8 +518,8 @@
         
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
         
         .course-card {
@@ -490,43 +535,45 @@
         }
         
         .course-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
         .course-image {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         
         .course-content {
-            padding: 30px;
+            padding: 25px;
         }
         
         .course-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
         }
         
         .course-description {
             color: var(--text-secondary);
             margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         
         .course-tags {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
         
         .course-tag {
-            padding: 5px 15px;
+            padding: 4px 12px;
             background-color: rgba(255, 102, 196, 0.1);
             border: 1px solid var(--accent-magenta);
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent-magenta);
         }
         
@@ -537,135 +584,16 @@
             align-items: center;
             gap: 5px;
             transition: gap 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .course-cta:hover {
             gap: 10px;
         }
         
-        /* Modal */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        
-        .modal.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        
-        .modal-content {
-            background-color: var(--bg-primary);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-        }
-        
-        .modal-close svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--text-primary);
-        }
-        
-        .modal-body {
-            padding: 30px;
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .modal-video {
-            width: 100%;
-            height: 400px;
-            background-color: var(--glass-bg);
-            border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .modal-video video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .modal-description {
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-        }
-        
-        .modal-highlights {
-            margin-bottom: 30px;
-        }
-        
-        .modal-highlights h3 {
-            margin-bottom: 15px;
-        }
-        
-        .modal-highlights ul {
-            list-style: none;
-        }
-        
-        .modal-highlights li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .modal-highlights li::before {
-            content: '✓';
-            color: var(--accent-cyan);
-            font-weight: bold;
-        }
-        
         /* Join Section */
         .join-section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             position: relative;
             z-index: 5;
             display: flex;
@@ -675,24 +603,25 @@
         }
         
         .join-container {
-            max-width: 600px;
+            max-width: 500px;
             width: 100%;
             background-color: var(--glass-bg);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             border: 1px solid var(--glass-border);
-            padding: 50px;
+            padding: 40px 25px;
             text-align: center;
         }
         
         .join-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         
         .join-subtitle {
             color: var(--text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
         }
         
         .form-group {
@@ -702,19 +631,20 @@
         
         .form-label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
+            font-size: 0.9rem;
         }
         
         .form-input, .form-select {
             width: 100%;
-            padding: 15px;
+            padding: 12px 15px;
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
             border-radius: 10px;
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
         
@@ -730,21 +660,21 @@
         
         .form-error {
             color: var(--accent-magenta);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-top: 5px;
             display: none;
         }
         
         .form-cta {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
             color: var(--bg-primary);
             border: none;
             border-radius: 10px;
             font-family: 'Orbitron', sans-serif;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 0.05em;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -767,11 +697,12 @@
             border-radius: 10px;
             color: var(--accent-cyan);
             display: none;
+            font-size: 0.9rem;
         }
         
         /* Footer */
         .footer {
-            padding: 50px 20px;
+            padding: 40px 20px;
             position: relative;
             z-index: 5;
             border-top: 1px solid var(--glass-border);
@@ -790,7 +721,7 @@
         .footer-logo {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
             -webkit-background-clip: text;
             background-clip: text;
@@ -799,13 +730,15 @@
         
         .footer-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
         .footer-link {
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .footer-link:hover {
@@ -814,7 +747,7 @@
         
         .footer-copyright {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* Accessibility */
@@ -845,41 +778,199 @@
             }
         }
         
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 15px 20px;
+            .mobile-menu-toggle {
+                display: flex;
             }
             
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: rgba(7, 6, 11, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 80px 30px;
+                gap: 30px;
+                transition: right 0.3s ease;
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.1rem;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .cta {
+                width: 100%;
+                text-align: center;
             }
             
             .mentor-container {
                 height: 400px;
-            }
-            
-            .mentor-card {
-                width: 250px;
-                height: 350px;
+                max-width: 300px;
             }
             
             .mentor-image {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
+            }
+            
+            .mentor-name {
+                font-size: 1.1rem;
+            }
+            
+            .mentor-title {
+                font-size: 0.85rem;
+            }
+            
+            .mentor-tag {
+                font-size: 0.7rem;
+                padding: 3px 10px;
+            }
+            
+            .mentor-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .mentor-nav svg {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .mentor-thumbnail {
+                width: 45px;
+                height: 45px;
             }
             
             .courses-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .course-image {
+                height: 160px;
+            }
+            
+            .course-title {
+                font-size: 1.2rem;
             }
             
             .join-container {
                 padding: 30px 20px;
             }
             
+            .join-title {
+                font-size: 1.5rem;
+            }
+            
             .footer-container {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .preloader-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .preloader-text {
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 12vw, 3rem);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.85rem, 5vw, 1.1rem);
+            }
+            
+            .section-title {
+                font-size: clamp(1.3rem, 7vw, 2rem);
+            }
+            
+            .section-subtitle {
+                font-size: clamp(0.85rem, 4vw, 1rem);
+            }
+            
+            .mentor-container {
+                height: 380px;
+                max-width: 280px;
+            }
+            
+            .mentor-card {
+                padding: 25px 15px;
+            }
+            
+            .mentor-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .mentor-name {
+                font-size: 1rem;
+            }
+            
+            .mentor-title {
+                font-size: 0.8rem;
+            }
+            
+            .course-content {
+                padding: 20px;
+            }
+            
+            .course-title {
+                font-size: 1.1rem;
+            }
+            
+            .join-container {
+                padding: 25px 15px;
+            }
+            
+            .join-title {
+                font-size: 1.3rem;
+            }
+            
+            .join-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Touch-friendly hover states */
+        @media (hover: none) {
+            .cta:hover, .mentor-nav:hover, .course-card:hover, .mentor-thumbnail:hover {
+                transform: none;
+            }
+            
+            .cta:active {
+                transform: scale(0.97);
+            }
+            
+            .mentor-nav:active {
+                transform: scale(0.95);
             }
         }
     </style>
@@ -910,7 +1001,12 @@
     <!-- Navigation -->
     <nav class="nav-container" id="nav">
         <div class="nav-logo">D;SS THAT {DSA}</div>
-        <div class="nav-links">
+        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
             <a href="#home" class="nav-link">Home</a>
             <a href="#mentors" class="nav-link">Mentors</a>
             <a href="#courses" class="nav-link">Courses</a>
@@ -929,7 +1025,7 @@
                 <h1 class="hero-title" id="hero-title">D;SS THAT {DSA}</h1>
                 <p class="hero-subtitle" id="hero-subtitle"></p>
                 <div class="hero-ctas">
-                    <a href="#mentors" class="cta cta-primary" id="enter-portal">Enter the Portal</a>
+                    <a href="#mentors" class="cta cta-primary" id="enter-portal">Enter Portal</a>
                     <a href="#mentors" class="cta cta-secondary" id="preview-mentors">Preview Mentors</a>
                 </div>
             </div>
@@ -939,7 +1035,7 @@
     <!-- Mentor Hub -->
     <section class="mentor-hub" id="mentors">
         <h2 class="section-title">Meet Your Mentors</h2>
-        <p class="section-subtitle">Learn from industry experts who've mastered the art of problem-solving</p>
+        <p class="section-subtitle">Learn from industry experts who've mastered art of problem-solving</p>
         
         <div class="mentor-container">
             <div class="mentor-card active" id="mentor-0">
@@ -1017,7 +1113,7 @@
             
             <div class="courses-grid">
                 <div class="course-card">
-                    <img src="https://picsum.photos/seed/course1/400/200.jpg" alt="Data Structures Fundamentals" class="course-image">
+                    <img src="data:image/png;base64,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" alt="Data Structures Fundamentals" class="course-image">
                     <div class="course-content">
                         <h3 class="course-title">Data Structures Fundamentals</h3>
                         <p class="course-description">Master the core data structures that power efficient algorithms and solve complex problems.</p>
@@ -1032,7 +1128,7 @@
                 </div>
                 
                 <div class="course-card">
-                    <img src="https://picsum.photos/seed/course2/400/200.jpg" alt="Advanced Algorithm Design" class="course-image">
+                    <img src="https://www.devopsschool.com/blog/wp-content/uploads/2021/06/Complete-Tutorials-of-Introduction-to-Algorithm.png" alt="Advanced Algorithm Design" class="course-image">
                     <div class="course-content">
                         <h3 class="course-title">Advanced Algorithm Design</h3>
                         <p class="course-description">Explore sophisticated algorithmic techniques and optimization strategies for challenging problems.</p>
@@ -1045,100 +1141,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- <div class="course-card">
-                    <img src="https://picsum.photos/seed/course3/400/200.jpg" alt="System Design Interview Prep" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">System Design Interview Prep</h3>
-                        <p class="course-description">Build scalable systems and ace technical interviews with our comprehensive system design course.</p>
-                        <div class="course-tags">
-                            <span class="course-tag">Intermediate</span>
-                            <span class="course-tag">6 Weeks</span>
-                        </div>
-                        <div class="course-cta">
-                            Learn More <span>→</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <img src="https://picsum.photos/seed/course4/400/200.jpg" alt="Machine Learning Foundations" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">Machine Learning Foundations</h3>
-                        <p class="course-description">Understand the principles of machine learning and build your first intelligent applications.</p>
-                        <div class="course-tags">
-                            <span class="course-tag">Intermediate</span>
-                            <span class="course-tag">12 Weeks</span>
-                        </div>
-                        <div class="course-cta">
-                            Learn More <span>→</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <img src="https://picsum.photos/seed/course5/400/200.jpg" alt="Backend Development with Flask" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">Backend Development with Flask</h3>
-                        <p class="course-description">Build robust backend applications using Flask and modern development practices.</p>
-                        <div class="course-tags">
-                            <span class="course-tag">Intermediate</span>
-                            <span class="course-tag">8 Weeks</span>
-                        </div>
-                        <div class="course-cta">
-                            Learn More <span>→</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <img src="https://picsum.photos/seed/course6/400/200.jpg" alt="Competitive Programming" class="course-image">
-                    <div class="course-content">
-                        <h3 class="course-title">Competitive Programming</h3>
-                        <p class="course-description">Sharpen your problem-solving skills and excel in coding competitions with targeted training.</p>
-                        <div class="course-tags">
-                            <span class="course-tag">Advanced</span>
-                            <span class="course-tag">10 Weeks</span>
-                        </div>
-                        <div class="course-cta">
-                            Learn More <span>→</span>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
-
-    <!-- Course Modal -->
-    <!-- <div class="modal" id="course-modal">
-        <div class="modal-content">
-            <div class="modal-close" id="modal-close">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                </svg>
-            </div>
-            <div class="modal-body">
-                <h2 class="modal-title" id="modal-title">Course Title</h2>
-                <div class="modal-video">
-                    <video id="modal-video" controls>
-                        <source src="" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p class="modal-description" id="modal-description">Course description goes here.</p>
-                <div class="modal-highlights">
-                    <h3>What You'll Learn</h3>
-                    <ul id="modal-highlights">
-                        <li>Learning point 1</li>
-                        <li>Learning point 2</li>
-                        <li>Learning point 3</li>
-                        <li>Learning point 4</li>
-                    </ul>
-                </div>
-                <a href="#join" class="cta cta-primary">Enroll Now</a>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Join Section -->
     <section class="join-section" id="join">
@@ -1172,7 +1177,7 @@
                     <div class="form-error" id="interest-error">Please select an area of interest</div>
                 </div>
                 
-                <button type="submit" class="form-cta">Join the Portal</button>
+                <button type="submit" class="form-cta">Join Portal</button>
                 
                 <div class="form-success" id="form-success">
                     Thank you for joining! We'll be in touch soon.
@@ -1184,13 +1189,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-logo">DISS THAT DSA</div>
+            <div class="footer-logo">D;SS THAT {DSA}</div>
             <div class="footer-links">
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
                 <a href="#" class="footer-link">Contact</a>
             </div>
-            <div class="footer-copyright">© 2023 DISS THAT DSA. All rights reserved.</div>
+            <div class="footer-copyright">© 2025 D;SS THAT {DSA}. All rights reserved.</div>
         </div>
     </footer>
 
@@ -1202,6 +1207,7 @@
         let mentors = [];
         let cinematicSkipped = false;
         let reduceMotion = false;
+        let isMobile = window.innerWidth <= 768;
         
         // Check for reduced motion preference
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1213,6 +1219,23 @@
         if (savedMotionPreference !== null) {
             reduceMotion = savedMotionPreference === 'true';
         }
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
         
         // Preloader
         window.addEventListener('load', () => {
@@ -1257,30 +1280,30 @@
                 0.1,
                 1000
             );
-            camera.position.z = 50;
+            camera.position.z = isMobile ? 60 : 50;
             
             // Renderer setup
             renderer = new THREE.WebGLRenderer({
                 canvas: canvas,
                 alpha: true,
-                antialias: true
+                antialias: !isMobile
             });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 2 : 2));
             
             // Create particles
             const particlesGeometry = new THREE.BufferGeometry();
-            const particlesCount = 2000;
+            const particlesCount = isMobile ? 1000 : 2000;
             const posArray = new Float32Array(particlesCount * 3);
             
             for (let i = 0; i < particlesCount * 3; i++) {
-                posArray[i] = (Math.random() - 0.5) * 100;
+                posArray[i] = (Math.random() - 0.5) * (isMobile ? 80 : 100);
             }
             
             particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
             
             const particlesMaterial = new THREE.PointsMaterial({
-                size: 0.5,
+                size: isMobile ? 0.3 : 0.5,
                 color: 0x00e5ff,
                 transparent: true,
                 opacity: 0.8,
@@ -1291,7 +1314,7 @@
             scene.add(particles);
             
             // Create portal
-            const portalGeometry = new THREE.TorusGeometry(10, 3, 16, 100);
+            const portalGeometry = new THREE.TorusGeometry(isMobile ? 8 : 10, isMobile ? 2 : 3, 16, 100);
             const portalMaterial = new THREE.MeshBasicMaterial({
                 color: 0xff66c4,
                 wireframe: true
@@ -1325,8 +1348,8 @@
             requestAnimationFrame(animate);
             
             if (!reduceMotion) {
-                particles.rotation.x += 0.0005;
-                particles.rotation.y += 0.0005;
+                particles.rotation.x += isMobile ? 0.0003 : 0.0005;
+                particles.rotation.y += isMobile ? 0.0003 : 0.0005;
                 
                 portal.rotation.x += 0.01;
                 portal.rotation.y += 0.005;
@@ -1374,15 +1397,12 @@
             
             // Initialize form
             initForm();
-            
-            // Initialize modal
-            initModal();
         }
         
         // Type subtitle
         function typeSubtitle() {
             const subtitle = document.getElementById('hero-subtitle');
-            const text = 'Step inside the logic. Learn with clarity.';
+            const text = 'Step inside logic. Learn with clarity.';
             let index = 0;
             
             function type() {
@@ -1418,9 +1438,15 @@
             });
             
             // Thumbnail clicks
-            thumbnails.forEach(thumbnail => {
+            thumbnails.forEach((thumbnail, index) => {
                 thumbnail.addEventListener('click', () => {
-                    currentMentor = parseInt(thumbnail.dataset.mentor);
+                    // Get mentor index from data attribute
+                    const mentorIndex = parseInt(thumbnail.dataset.mentor);
+                    
+                    // Update currentMentor to clicked thumbnail's index
+                    currentMentor = mentorIndex;
+                    
+                    // Show selected mentor
                     showMentor(currentMentor);
                 });
             });
@@ -1435,14 +1461,48 @@
                     showMentor(currentMentor);
                 }
             });
+            
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            const mentorContainer = document.querySelector('.mentor-container');
+            
+            mentorContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            mentorContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    // Swipe left - next mentor
+                    currentMentor = (currentMentor + 1) % mentors.length;
+                    showMentor(currentMentor);
+                }
+                if (touchEndX > touchStartX + 50) {
+                    // Swipe right - previous mentor
+                    currentMentor = (currentMentor - 1 + mentors.length) % mentors.length;
+                    showMentor(currentMentor);
+                }
+            }
         }
         
-        // Show mentor with morph effect
+        // Show mentor with proper 3D rotation
         function showMentor(index) {
             const mentors = document.querySelectorAll('.mentor-card');
             const thumbnails = document.querySelectorAll('.mentor-thumbnail');
             
-            // Update active states
+            // Ensure index is within bounds
+            if (index < 0 || index >= mentors.length) {
+                console.error('Invalid mentor index:', index);
+                return;
+            }
+            
+            // Update active states for mentor cards
             mentors.forEach((mentor, i) => {
                 if (i === index) {
                     mentor.classList.add('active');
@@ -1451,6 +1511,7 @@
                 }
             });
             
+            // Update active states for thumbnails
             thumbnails.forEach((thumbnail, i) => {
                 if (i === index) {
                     thumbnail.classList.add('active');
@@ -1459,24 +1520,8 @@
                 }
             });
             
-            // Apply morph effect if not reduced motion
-            if (!reduceMotion) {
-                const activeMentor = mentors[index];
-                gsap.fromTo(activeMentor, 
-                    {
-                        scale: 0.8,
-                        opacity: 0,
-                        rotationY: 90
-                    },
-                    {
-                        scale: 1,
-                        opacity: 1,
-                        rotationY: 0,
-                        duration: 0.9,
-                        ease: 'power2.inOut'
-                    }
-                );
-            }
+            // Update global currentMentor variable
+            currentMentor = index;
         }
         
         // Initialize course cards
@@ -1504,11 +1549,6 @@
             
             courseCards.forEach(card => {
                 observer.observe(card);
-                
-                // Add click event to open modal
-                card.addEventListener('click', () => {
-                    openCourseModal(card);
-                });
             });
         }
         
@@ -1577,45 +1617,6 @@
             });
         }
         
-        // Initialize modal
-        function initModal() {
-            const modal = document.getElementById('course-modal');
-            const closeBtn = document.getElementById('modal-close');
-            
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-            
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-        }
-        
-        // Open course modal
-        function openCourseModal(card) {
-            const modal = document.getElementById('course-modal');
-            const title = card.querySelector('.course-title').textContent;
-            const description = card.querySelector('.course-description').textContent;
-            
-            // Update modal content
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-description').textContent = description;
-            
-            // Generate highlights based on course
-            const highlights = document.getElementById('modal-highlights');
-            highlights.innerHTML = `
-                <li>Comprehensive curriculum with real-world examples</li>
-                <li>Hands-on projects to build your portfolio</li>
-                <li>Personalized feedback from industry experts</li>
-                <li>Access to exclusive community and resources</li>
-            `;
-            
-            // Show modal
-            modal.classList.add('active');
-        }
-        
         // Skip cinematic
         document.getElementById('skip-cinematic').addEventListener('click', () => {
             cinematicSkipped = true;
@@ -1658,7 +1659,7 @@
             isZoomed = true;
             
             gsap.to(camera.position, {
-                z: 20,
+                z: isMobile ? 30 : 20,
                 duration: 0.4,
                 ease: 'power2.inOut'
             });
@@ -1674,6 +1675,8 @@
         
         // Handle window resize
         window.addEventListener('resize', () => {
+            isMobile = window.innerWidth <= 768;
+            
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
@@ -1696,19 +1699,21 @@
             }
         });
         
-        // Handle mouse movement for subtle parallax
-        document.addEventListener('mousemove', (e) => {
-            if (reduceMotion) return;
-            
-            const mouseX = e.clientX / window.innerWidth - 0.5;
-            const mouseY = e.clientY / window.innerHeight - 0.5;
-            
-            // Subtle camera movement based on mouse position
-            if (camera && !isZoomed) {
-                camera.position.x = mouseX * 2;
-                camera.position.y = -mouseY * 2;
-            }
-        });
+        // Handle mouse movement for subtle parallax (desktop only)
+        if (!isMobile) {
+            document.addEventListener('mousemove', (e) => {
+                if (reduceMotion) return;
+                
+                const mouseX = e.clientX / window.innerWidth - 0.5;
+                const mouseY = e.clientY / window.innerHeight - 0.5;
+                
+                // Subtle camera movement based on mouse position
+                if (camera && !isZoomed) {
+                    camera.position.x = mouseX * 2;
+                    camera.position.y = -mouseY * 2;
+                }
+            });
+        }
     </script>
 </body>
 </html>
